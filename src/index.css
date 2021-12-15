@@ -1,13 +1,160 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
 body {
+  background-color: rgb(20, 24, 18);
+  color: white;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "VT323", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  scroll-behavior: smooth;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.amountcontainer {
+  display: flex;
+  align-items: center;
+  margin: 15px 0;
+  gap: 10px;
+  justify-content: center;
+  margin-left: 50px;
+}
+
+.amountcontainer button {
+  padding: 5px 10px 5px 10px;
+  font-weight: normal;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.priceinfocontainer {
+  margin-bottom: 25px;
+}
+
+.totalpricecontiner {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.numbercontainer {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  justify-content: space-between;
+}
+
+.mint-title {
+  font-size: 3rem;
+  color: white;
+  font-weight: normal;
+}
+
+.amountcontainer p {
+  color: white;
+  margin: 0 20px;
+  font-size: 2rem;
+}
+
+.nftcontainer {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.mintbtn {
+  border: none;
+  margin-top: 35px;
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.navcontainer {
+  background-color: #fff;
+
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.mintbtn:hover {
+  background-color: rgb(151, 185, 136);
+}
+
+.raritycontainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.raritytitle {
+  margin-top: 25px;
+  margin-bottom: 10vh;
+  text-align: center;
+  padding: 0 25px;
+}
+
+.raritytitle h2 {
+  font-size: 3.5rem;
+  font-weight: normal;
+}
+.raritytitle p {
+  font-size: 2.2rem;
+  font-weight: normal;
+}
+
+.raritywrapper {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  gap: 50px;
+  flex-wrap: wrap;
+  margin-bottom: 15vh;
+}
+
+.rarity {
+  text-align: center;
+  font-size: 2.2rem;
+}
+
+.mintContainer {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 54, 20, 0.85),
+      rgba(20, 24, 18, 0.85)
+    ),
+    url("https://c4.wallpaperflare.com/wallpaper/786/743/628/synthwave-city-evga-wallpaper-preview.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.supplyContainer {
+  text-align: center;
+  padding-top: 25px;
+  font-size: 2.5rem;
+}
+
+.supplyContainer h2 {
+  font-weight: normal;
 }
