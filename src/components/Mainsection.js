@@ -9,6 +9,7 @@ const Container = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  overflow: hidden !important;
 `;
 
 const Title = styled.h1`
@@ -45,11 +46,6 @@ const Title = styled.h1`
   }
 `;
 
-const Image = styled.img`
-  width: 100%;
-  z-index: 2;
-`;
-
 const Video = styled.div`
   position: absolute;
   top: 0;
@@ -67,7 +63,7 @@ const Mainsection = () => {
     <Container>
       <Video />
       <Title>Crypto Reeves</Title>
-      <Image src={reeves} />
+      <img className="banner" src={reeves} />
     </Container>
   );
 };

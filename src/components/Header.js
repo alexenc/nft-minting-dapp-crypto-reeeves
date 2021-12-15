@@ -55,8 +55,8 @@ const Header = ({ getUserWallet, wallet }) => {
   return (
     <Container>
       <div className="navcontainer">
-        <Link href="#mint">Mint</Link>
         <Link href="#tiers">Tiers</Link>
+        <Link href="#mint">Mint</Link>
         <Link href="#roadmap">Roadmap</Link>
         {wallet ? (
           <Add>{wallet}</Add>

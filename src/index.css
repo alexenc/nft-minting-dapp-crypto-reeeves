@@ -32,7 +32,7 @@ code {
 }
 
 .amountcontainer button {
-  padding: 5px 10px 5px 10px;
+  padding: 2px 15px 2px 15px;
   font-weight: normal;
   font-size: 1.5rem;
   border: none;
@@ -89,7 +89,10 @@ code {
 
 .navcontainer {
   background-color: #fff;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
   padding: 5px;
   border-radius: 10px;
 }
@@ -103,6 +106,26 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 54, 20, 0.85),
+      rgba(20, 24, 18, 0.85)
+    ),
+    url("https://cdn.pixabay.com/photo/2017/04/22/13/58/particles-2251393_960_720.jpg");
+
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.banner {
+  width: 100%;
+  min-width: 1200px;
+
+  object-fit: fill;
+  z-index: 2;
 }
 
 .raritytitle {
@@ -119,6 +142,11 @@ code {
 .raritytitle p {
   font-size: 2.2rem;
   font-weight: normal;
+}
+
+.rarity-desc {
+  max-width: 100%;
+  font-size: 1.2rem;
 }
 
 .raritywrapper {
@@ -157,4 +185,45 @@ code {
 
 .supplyContainer h2 {
   font-weight: normal;
+}
+
+.btn-hover {
+  text-transform: uppercase;
+  text-shadow: 0 0 5px black;
+  width: 200px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  margin: 20px 0;
+  height: 55px;
+  text-align: center;
+  border: none;
+  background-size: 300% 100%;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:hover {
+  background-position: 100% 0;
+  moz-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn-hover:focus {
+  outline: none;
+}
+.btn-hover.color-1 {
+  background-image: linear-gradient(
+    to right,
+    #25dbe1,
+    #40e495,
+    #30dd8a,
+    #2bb673
+  );
+  box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
 }

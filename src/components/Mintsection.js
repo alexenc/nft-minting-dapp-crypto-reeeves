@@ -22,8 +22,8 @@ const Mintsection = ({ MintNFT, isPending, minting, txn, currentSupply }) => {
   const [count, setCount] = useState(1);
 
   const increment = () => {
-    if (count >= 10) {
-      setCount(10);
+    if (count >= 25) {
+      setCount(25);
     } else {
       setCount(count + 1);
     }
@@ -68,7 +68,10 @@ const Mintsection = ({ MintNFT, isPending, minting, txn, currentSupply }) => {
               </div>
             </div>
 
-            <button onClick={() => MintNFT(count)} className="mintbtn">
+            <button
+              onClick={() => MintNFT(count)}
+              className="btn-hover color-1"
+            >
               mint
             </button>
             {isPending && <p>txt initialized</p>}
