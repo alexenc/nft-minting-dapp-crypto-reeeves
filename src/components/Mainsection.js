@@ -3,7 +3,7 @@ import reeves from "../assets/transparent_banner.png";
 import video from "../assets/bg_vid.mp4";
 
 const Container = styled.div`
-  height: 80vh;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,6 +13,7 @@ const Container = styled.div`
 `;
 
 const Title = styled.h1`
+  padding: 5px;
   text-transform: uppercase;
   font-size: 4.5rem;
   margin: 0;
@@ -54,7 +55,8 @@ const Video = styled.div`
   height: 100%;
   object-fit: cover;
   z-index: 1;
-  opacity: 0.3;
+  opacity: 0.1;
+  background-size: cover;
   background-image: url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/the-matrix-digital-rain.jpg);
 `;
 
@@ -64,6 +66,12 @@ const Mainsection = () => {
       <Video />
       <Title>Crypto Reeves</Title>
       <img className="banner" src={reeves} />
+      <div className="raritytitle">
+        <p>
+          Crypto Reeves is a multi-themed, 1302 NFT's Fan Art collection living
+          in the Polygon chain
+        </p>
+      </div>
     </Container>
   );
 };

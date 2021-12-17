@@ -8,6 +8,8 @@ import Mintsection from "./components/Mintsection";
 import Rarity from "./components/Rarity";
 import Web3 from "web3";
 import Swal from "sweetalert2";
+import Footer from "./components/Footer";
+import Faq from "./components/Faq";
 
 const Container = styled.div``;
 
@@ -15,11 +17,12 @@ function App() {
   const [wallet, setWallet] = useState(null);
   const [chain, setChain] = useState("");
   const [isPending, setIspending] = useState(false);
+  const [minted, setMinted] = useState(false);
   const [minting, setIsMinting] = useState(false);
   const [txn, setTxn] = useState(null);
   const [currentSupply, setCurrentSupply] = useState(0);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "0x964a508192269C743d9fE03eDd3c51c6F76a56cE",
+    CONTRACT_ADDRESS: "0xDae6eDFF6e3BA70aC797B8ba46b4E3A1FbcD7e9b",
     SCAN_LINK: "",
     NETWORK: {
       NAME: "Mumbai",
@@ -27,11 +30,11 @@ function App() {
       ID: "0x13881",
     },
     MAX_SUPPLY: 1302,
-    price: 0.5,
+    price: 0.01,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
     MARKETPLACE: "opensea",
-    MARKETPLACE_LINK: "",
+    MARKETPLACE_LINK: `https://testnets.opensea.io/assets/0x964a508192269C743d9fE03eDd3c51c6F76a56cE/1`,
   });
 
   const getUserWallet = async (e) => {
@@ -101,7 +104,7 @@ function App() {
   }
 
   const MintNFT = async (num) => {
-    const price = CONFIG.price;
+    const price = CONFIG.price * num;
 
     try {
       const { ethereum } = window;
@@ -109,13 +112,13 @@ function App() {
       console.log("connected to chain" + chainId);
       setChain(chainId);
       console.log(CONFIG.NETWORK.ID);
-      if (chainId !== CONFIG.NETWORK.ID) {
+      /* if (chainId !== CONFIG.NETWORK.ID) {
         setTimeout(() => {
           addPolygonTestnetNetwork();
         }, 2000);
 
         return;
-      }
+      }*/
 
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
@@ -126,27 +129,23 @@ function App() {
           signer
         );
 
-        console.log("Going to pop wallet now to pay gas...");
-        setIspending(true);
+        setIsMinting(true);
         let nftTxn = await connectedContract.mint(num, {
           value: ethers.utils.parseEther(price.toString()),
         });
-        setIspending(false);
-        setIsMinting(true);
         console.log("Mining...please wait.");
         await nftTxn.wait();
         setIsMinting(false);
+        setMinted(true);
 
-        setTxn(
-          `Mined, see transaction: https://rinkeby.etherscan.io/tx/${nftTxn.hash}`
-        );
+        setTxn(`https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
       } else {
-        console.lo("Ethereum object doesn't exist!");
+        console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
       Swal.fire({
         position: "top-end",
-        title: "Not enough funds",
+        title: "Not enough funds or something went wrong",
         showConfirmButton: false,
         timer: 5000,
       });
@@ -192,8 +191,11 @@ function App() {
         isPending={isPending}
         minting={minting}
         txn={txn}
+        minted={minted}
         currentSupply={currentSupply}
       />
+      <Faq />
+      <Footer />
     </Container>
   );
 }

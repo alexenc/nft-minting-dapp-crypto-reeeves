@@ -1,15 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
-const Container = styled.div`
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  z-index: 3;
-`;
 
 const Link = styled.a`
   color: rgb(20, 24, 18);
@@ -34,39 +24,37 @@ const Add = styled.p`
   color: black;
 `;
 
-const ConnectWallet = styled.button`
-  border: none;
-  padding: 10px;
-  border-radius: 5px;
-  color: rgb(20, 24, 18);
-  font-size: 1rem;
-  font-weight: bold;
-  background-color: rgb(151, 185, 136);
-  text-transform: uppercase;
-  cursor: pointer;
-  transition: all 0.3s ease;
-
-  :hover {
-    background-color: rgb(92, 117, 79);
-  }
-`;
-
 const Header = ({ getUserWallet, wallet }) => {
+  const [show, seteShow] = useState(false);
+
+  const getPosition = () => {
+    if (window.scrollY > 200 || window.innerWidth > 600) {
+      seteShow(true);
+    } else {
+      seteShow(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", getPosition);
+    return () => window.removeEventListener("scroll", getPosition);
+  }, []);
+
   return (
-    <Container>
-      <div className="navcontainer">
+    <header className={` ${show && "fixed"}`}>
+      <div className={`navcontainer`}>
         <Link href="#tiers">Tiers</Link>
         <Link href="#mint">Mint</Link>
         <Link href="#roadmap">Roadmap</Link>
         {wallet ? (
           <Add>{wallet}</Add>
         ) : (
-          <ConnectWallet onClick={() => getUserWallet()}>
+          <button className="connectWallet" onClick={() => getUserWallet()}>
             Connect Wallet
-          </ConnectWallet>
+          </button>
         )}
       </div>
-    </Container>
+    </header>
   );
 };
 

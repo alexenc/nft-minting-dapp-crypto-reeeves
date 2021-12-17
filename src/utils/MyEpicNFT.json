@@ -129,6 +129,19 @@
 				"inputs": [
 					{
 						"internalType": "address",
+						"name": "_add",
+						"type": "address"
+					}
+				],
+				"name": "addToWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
 						"name": "to",
 						"type": "address"
 					},
@@ -221,6 +234,25 @@
 					}
 				],
 				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "isWhitelisted",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -503,6 +535,13 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "setWhitelistPhase",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -672,6 +711,45 @@
 						"internalType": "uint256[]",
 						"name": "",
 						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "whitelistCost",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_mintAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "whitelistMint",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "whitelistOn",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
 					}
 				],
 				"stateMutability": "view",
@@ -867,11 +945,11 @@
 			]
 		},
 		"baseNft.sol": {
-			"keccak256": "0x96ddfd352cf26bf555ae1779913d49c080671be47a7f5bfbfb4212c806f9b335",
+			"keccak256": "0xf9f50550decbb7446b8179f49004b7783642ee58ae13489c7f7fb17515e5c7ab",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7c77c4a3985df8ae5b88a19c1fdebf4b375542ce4472250db09473b49f49d061",
-				"dweb:/ipfs/Qmdv2LzAWnzPXDTk6sL2QWnex3vXwiL3bEbXQ3nE6aEaqs"
+				"bzz-raw://7468e04b09470a4e877335fbe8a45ead97d54838de10a71331897f123ac48888",
+				"dweb:/ipfs/QmSd8AjRwUM2e6L6sLpHL1jdpU8Au2EyDaazLRf8XUJSH5"
 			]
 		}
 	},

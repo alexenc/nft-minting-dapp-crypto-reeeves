@@ -22,6 +22,20 @@ code {
   box-sizing: border-box;
 }
 
+header {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  z-index: 3;
+  transition: all 0.3s ease;
+}
+
+.fixed {
+  position: fixed;
+}
+
 .amountcontainer {
   display: flex;
   align-items: center;
@@ -37,6 +51,7 @@ code {
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
+  min-width: 40px;
 }
 
 .priceinfocontainer {
@@ -77,13 +92,18 @@ code {
   padding: 20px;
 }
 
+.nftcontainer img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .mintbtn {
   border: none;
   margin-top: 35px;
   font-size: 1.5rem;
   padding: 5px 10px;
   cursor: pointer;
-
+  width: 100%;
   transition: all 0.3s ease;
 }
 
@@ -106,7 +126,7 @@ code {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  min-height: 100vh;
   background-image: linear-gradient(
       to bottom,
       rgba(31, 54, 20, 0.85),
@@ -140,7 +160,7 @@ code {
   font-weight: normal;
 }
 .raritytitle p {
-  font-size: 2.2rem;
+  font-size: 2.5rem;
   font-weight: normal;
 }
 
@@ -164,6 +184,10 @@ code {
   font-size: 2.2rem;
 }
 
+.rarity img {
+  width: 100%;
+}
+
 .mintContainer {
   background-image: linear-gradient(
       to bottom,
@@ -175,11 +199,27 @@ code {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nftMinted-container {
+  margin-bottom: 25px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.nftMinted-container h3 {
+  font-weight: normal;
+  font-size: 2.5rem;
 }
 
 .supplyContainer {
   text-align: center;
-  padding-top: 25px;
+  padding-top: 100px;
   font-size: 2.5rem;
 }
 
@@ -187,12 +227,67 @@ code {
   font-weight: normal;
 }
 
+.successLink-container {
+  display: flex;
+  font-size: 1.7rem;
+  font-weight: normal;
+}
+
+.faq-container {
+  padding: 35px 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(31, 54, 20, 0.85),
+      rgba(20, 24, 18, 0.85)
+    ),
+    url("https://image.freepik.com/vector-gratis/onda-digital-abstracta-fondo-particulas_1409-1276.jpg");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.faq-item-container {
+  max-width: 700px;
+  padding: 10px;
+  margin-bottom: 40px;
+}
+
+.faq-item-container a {
+  text-decoration: none;
+  color: #25dbe1;
+}
+
+.faq-item-container h2 {
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.faq-item-container p {
+  font-weight: normal;
+  font-size: 1.7rem;
+}
+
+.successLink-container a {
+  text-decoration: none;
+  color: #25dbe1;
+  margin-right: 10px;
+}
+.successLink-container p {
+  margin-right: 10px;
+}
+
 .btn-hover {
   text-transform: uppercase;
   text-shadow: 0 0 5px black;
-  width: 200px;
-  font-size: 16px;
-  font-weight: 600;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 2rem;
+  width: 100%;
   color: #fff;
   cursor: pointer;
   margin: 20px 0;
@@ -200,7 +295,7 @@ code {
   text-align: center;
   border: none;
   background-size: 300% 100%;
-  moz-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -208,7 +303,7 @@ code {
 
 .btn-hover:hover {
   background-position: 100% 0;
-  moz-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
   -o-transition: all 0.4s ease-in-out;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
@@ -226,4 +321,41 @@ code {
     #2bb673
   );
   box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+.connectWallet {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  color: rgb(20, 24, 18);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: rgb(151, 185, 136);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.connectWallet:hover {
+  background-color: rgb(92, 117, 79);
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.footer-icons-container {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+
+.footer-icon {
+  width: 65px;
 }

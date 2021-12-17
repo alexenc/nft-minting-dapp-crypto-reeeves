@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import nft from "../assets/Mint.gif";
+import NftMinted from "./NftMinted";
 
 const Container = styled.div`
   min-height: 70vh;
@@ -18,7 +19,14 @@ const Mintcontainer = styled.div`
   padding: 20px;
 `;
 
-const Mintsection = ({ MintNFT, isPending, minting, txn, currentSupply }) => {
+const Mintsection = ({
+  MintNFT,
+  isPending,
+  minting,
+  txn,
+  currentSupply,
+  minted,
+}) => {
   const [count, setCount] = useState(1);
 
   const increment = () => {
@@ -40,7 +48,7 @@ const Mintsection = ({ MintNFT, isPending, minting, txn, currentSupply }) => {
   return (
     <div className="mintContainer">
       <div className="supplyContainer">
-        <h2>{currentSupply}/1306 NFT minted</h2>
+        <h2>{currentSupply}/1302 NFT minted</h2>
       </div>
       <Container>
         <div className="nftcontainer" id="mint">
@@ -67,21 +75,27 @@ const Mintsection = ({ MintNFT, isPending, minting, txn, currentSupply }) => {
                 <p>{20 * count} MATIC</p>
               </div>
             </div>
-
-            <button
-              onClick={() => MintNFT(count)}
-              className="btn-hover color-1"
-            >
-              mint
-            </button>
-            {isPending && <p>txt initialized</p>}
-            {minting && <p>Minting nft ...</p>}
-            {txn && (
-              <p style={{ maxWidth: "100%", overflow: "hidden" }}>txn {txn}</p>
+            {minting ? (
+              <button className="btn-hover color-1">minting...</button>
+            ) : (
+              <button
+                onClick={() => MintNFT(count)}
+                className="btn-hover color-1"
+              >
+                mint
+              </button>
             )}
           </div>
         </Mintcontainer>
       </Container>
+      {minted && (
+        <NftMinted
+          txn={txn}
+          count={count}
+          currentSupply={currentSupply}
+          count={count}
+        />
+      )}
     </div>
   );
 };

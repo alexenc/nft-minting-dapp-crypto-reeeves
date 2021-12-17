@@ -8,7 +8,6 @@ const Rarity = () => {
     <div className="raritycontainer" id="tiers">
       <div className="raritytitle">
         <h2>Tier list</h2>
-        <p>Crypto Reeves is a 1296nft collection living in the polygon chain</p>
       </div>
       <div className="raritywrapper">
         <div className="rarity">
