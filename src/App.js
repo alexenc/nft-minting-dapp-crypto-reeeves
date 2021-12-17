@@ -10,12 +10,14 @@ import Web3 from "web3";
 import Swal from "sweetalert2";
 import Footer from "./components/Footer";
 import Faq from "./components/Faq";
+import PresaleCountdown from "./components/PresaleCountdown";
 
 const Container = styled.div``;
 
 function App() {
   const [wallet, setWallet] = useState(null);
   const [chain, setChain] = useState("");
+
   const [isPending, setIspending] = useState(false);
   const [minted, setMinted] = useState(false);
   const [minting, setIsMinting] = useState(false);
@@ -24,6 +26,7 @@ function App() {
   const [CONFIG, SET_CONFIG] = useState({
     CONTRACT_ADDRESS: "0xDae6eDFF6e3BA70aC797B8ba46b4E3A1FbcD7e9b",
     SCAN_LINK: "",
+
     NETWORK: {
       NAME: "Mumbai",
       SYMBOL: "Matic",
@@ -112,13 +115,13 @@ function App() {
       console.log("connected to chain" + chainId);
       setChain(chainId);
       console.log(CONFIG.NETWORK.ID);
-      /* if (chainId !== CONFIG.NETWORK.ID) {
+      if (chainId !== CONFIG.NETWORK.ID) {
         setTimeout(() => {
           addPolygonTestnetNetwork();
         }, 2000);
 
         return;
-      }*/
+      }
 
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
@@ -140,7 +143,6 @@ function App() {
 
         setTxn(`https://rinkeby.etherscan.io/tx/${nftTxn.hash}`);
       } else {
-        console.log("Ethereum object doesn't exist!");
       }
     } catch (error) {
       Swal.fire({
@@ -185,6 +187,7 @@ function App() {
     <Container>
       <Header getUserWallet={getUserWallet} wallet={wallet} />
       <Mainsection />
+      <PresaleCountdown />
       <Rarity />
       <Mintsection
         MintNFT={MintNFT}

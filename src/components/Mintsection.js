@@ -29,6 +29,7 @@ const Mintsection = ({
 }) => {
   const [count, setCount] = useState(1);
 
+  const [error, setError] = useState(false);
   const increment = () => {
     if (count >= 25) {
       setCount(25);
@@ -79,7 +80,8 @@ const Mintsection = ({
               <button className="btn-hover color-1">minting...</button>
             ) : (
               <button
-                onClick={() => MintNFT(count)}
+                /*onClick={() => MintNFT(count)}*/
+                onClick={() => setError(true)}
                 className="btn-hover color-1"
               >
                 mint
@@ -88,6 +90,11 @@ const Mintsection = ({
           </div>
         </Mintcontainer>
       </Container>
+      {error && (
+        <p style={{ color: "red", fontSize: 40 }}>
+          The collection has not been released yet
+        </p>
+      )}
       {minted && (
         <NftMinted
           txn={txn}

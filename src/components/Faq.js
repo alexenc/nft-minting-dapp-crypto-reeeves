@@ -2,7 +2,7 @@ import React from "react";
 
 const Faq = () => {
   return (
-    <div className="faq-container">
+    <div className="faq-container" id="faq">
       <div className="faq-item-container">
         <h2>About the project</h2>
         <p>
@@ -20,7 +20,11 @@ const Faq = () => {
         <p>
           The presale will start the day 25th of december of 2021, and the whole
           collection will be released 24h later. To be added to the whitelist
-          join our discord <a href="">Here</a> and go to the #whitelist channel.
+          join our discord{" "}
+          <a target="_blank" href="https://discord.gg/gFeG9DYpYS">
+            Here
+          </a>{" "}
+          and go to the #whitelist channel.
         </p>
       </div>
       <div className="faq-item-container">
@@ -32,7 +36,7 @@ const Faq = () => {
           <a target="_blank" href="https://ramp.network/buy/">
             Here
           </a>{" "}
-          with your credic card, that way you don't need to pay the fees of a
+          with your credit card, that way you don't need to pay the fees of a
           bridge.
         </p>
       </div>
