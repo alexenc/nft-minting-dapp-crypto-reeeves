@@ -30,7 +30,6 @@ const PresaleCountdown = () => {
       minutes: textMinute,
       seconds: textSecond,
     });
-    console.log(1);
   };
 
   useEffect(() => {
