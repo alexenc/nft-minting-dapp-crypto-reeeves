@@ -33,8 +33,10 @@ const PresaleCountdown = () => {
   };
 
   useEffect(() => {
-    countdown();
-  }, [1000]);
+    setInterval(() => {
+      countdown();
+    }, 1000);
+  }, []);
 
   return (
     <div className="presale-count-container">
