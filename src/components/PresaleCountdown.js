@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const PresaleCountdown = () => {
   const [timer, setTimer] = useState({
@@ -30,9 +30,12 @@ const PresaleCountdown = () => {
       minutes: textMinute,
       seconds: textSecond,
     });
+    console.log(1);
   };
 
-  setInterval(countdown, 1000);
+  useEffect(() => {
+    countdown();
+  }, [1000]);
 
   return (
     <div className="presale-count-container">
