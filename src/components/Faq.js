@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./Footer";
 
 const Faq = () => {
   return (
@@ -11,15 +12,15 @@ const Faq = () => {
           this culture figure and also celebrate the most awaited continuation
           of "The Matrix" saga. Each set has 4 different parts which are
           randomized in order to create the "common" rarity with a total of 1296
-          posible combinations. There are 6 different sets, The Witcher, Jhon
-          wick, Cyberpunk, BTC Holder, Matrix and
+          possible combinations. There are 6 different sets, The Witcher, Jhon
+          Wick, Cyberpunk, BTC Holder, Matrix and Camera meme.
         </p>
       </div>
       <div className="faq-item-container">
         <h2>Release date</h2>
         <p>
-          The presale will start the day 25th of december of 2021, and the whole
-          collection will be released 24h later. To be added to the whitelist
+          The presale will start the day 22th of december of 2021, and the whole
+          collection will be released the 25th. To be added to the whitelist
           join our discord{" "}
           <a target="_blank" href="https://discord.gg/gFeG9DYpYS">
             Here
@@ -28,7 +29,7 @@ const Faq = () => {
         </p>
       </div>
       <div className="faq-item-container">
-        <h2>Why on polygon?</h2>
+        <h2>Why on Polygon?</h2>
         <p>
           We have decided to launch the collection in polygon because of the
           extremely high gas fees on the main net. If you don have polygon on
@@ -40,6 +41,7 @@ const Faq = () => {
           bridge.
         </p>
       </div>
+      <Footer />
     </div>
   );
 };

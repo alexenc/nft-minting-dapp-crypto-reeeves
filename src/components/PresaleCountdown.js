@@ -40,7 +40,7 @@ const PresaleCountdown = () => {
 
   return (
     <div className="presale-count-container">
-      <h2>Presale starts in</h2>
+      <h2>Collection released in</h2>
       <div className="timer-container">
         <div>
           <h3>{timer.days}</h3>
@@ -61,6 +61,9 @@ const PresaleCountdown = () => {
       </div>
       <div className="howtojoin-container">
         <div>
+          <p style={{ fontSize: "1.5rem", marginBottom: 15 }}>
+            presale starts day <span style={{ fontWeight: "bold" }}>22th.</span>
+          </p>
           <a
             className="link"
             href="https://discord.gg/gFeG9DYpYS"

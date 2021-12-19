@@ -25,27 +25,14 @@ const Add = styled.p`
 `;
 
 const Header = ({ getUserWallet, wallet }) => {
-  const [show, seteShow] = useState(false);
-
-  const getPosition = () => {
-    if (window.scrollY > 200 || window.innerWidth > 600) {
-      seteShow(true);
-    } else {
-      seteShow(false);
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", getPosition);
-    return () => window.removeEventListener("scroll", getPosition);
-  }, []);
-
   return (
-    <header className={` ${show && "fixed"}`}>
+    <header>
       <div className={`navcontainer`}>
-        <Link href="#tiers">Tiers</Link>
-        <Link href="#mint">Mint</Link>
-        <Link href="#faq">Faq</Link>
+        <Link href="#tiers">TIERS</Link>
+        <Link href="#mint">MINT</Link>
+        <Link style={{ marginRight: 20 }} href="#faq">
+          FAQ
+        </Link>
         {wallet ? (
           <Add>{wallet}</Add>
         ) : (

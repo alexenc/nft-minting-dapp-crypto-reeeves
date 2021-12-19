@@ -28,6 +28,7 @@ const Mintsection = ({
   minted,
 }) => {
   const [count, setCount] = useState(1);
+  const [price, setPrice] = useState(30);
 
   const [error, setError] = useState(false);
   const increment = () => {
@@ -47,22 +48,22 @@ const Mintsection = ({
   };
 
   return (
-    <div className="mintContainer">
+    <div className="mintContainer" id="mint">
       <div className="supplyContainer">
         <h2>{currentSupply}/1302 NFT minted</h2>
       </div>
       <Container>
-        <div className="nftcontainer" id="mint">
+        <div className="nftcontainer">
           <img src={nft} alt="" />
         </div>
         <Mintcontainer>
           <div className="infocontainer">
             <div className="priceinfocontainer">
-              <h2 className="mint-title">1 nft = 20 Matic</h2>
+              <h2 className="mint-title">1 NFT = ? Matic</h2>
             </div>
 
             <div className="numbercontainer">
-              <h3>Number of nfts:</h3>
+              <h3>Number of NFTs:</h3>
               <div className="amountcontainer">
                 <button onClick={decrement}>-</button>
                 <p> {count}</p>
@@ -73,7 +74,7 @@ const Mintsection = ({
             <div className="totalpricecontiner">
               <p>Total price:</p>
               <div className="pricecontainer">
-                <p>{20 * count} MATIC</p>
+                <p>? MATIC</p>
               </div>
             </div>
             {minting ? (

@@ -1,10 +1,12 @@
 import styled from "styled-components";
 import reeves from "../assets/transparent_banner.png";
 import video from "../assets/bg_vid.mp4";
+import PresaleCountdown from "./PresaleCountdown";
 
 const Container = styled.div`
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
+  padding-bottom: 20px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
@@ -30,8 +32,9 @@ const Title = styled.h1`
   text-align: center;
   font-weight: bold;
   margin: 40px 0px;
-  @media (max-width: 350px) {
+  @media (max-width: 600px) {
     font-size: 4rem;
+    padding-top: 250px;
   }
 
   @keyframes animate {
@@ -62,17 +65,20 @@ const Video = styled.div`
 
 const Mainsection = () => {
   return (
-    <Container>
-      <Video />
-      <Title>Crypto Reeves</Title>
-      <img className="banner" src={reeves} />
-      <div className="raritytitle">
-        <p>
-          Crypto Reeves is a multi-themed, 1302 NFT's Fan Art collection living
-          in the Polygon chain
-        </p>
-      </div>
-    </Container>
+    <>
+      <Container>
+        <Video />
+        <Title>Crypto Reeves</Title>
+        <img className="banner" src={reeves} />
+        <div className="raritytitle">
+          <p>
+            Crypto Reeves is a multi-themed, 1302 NFT's Fan Art collection
+            living in the Polygon chain
+          </p>
+        </div>
+      </Container>
+      <PresaleCountdown />
+    </>
   );
 };
 

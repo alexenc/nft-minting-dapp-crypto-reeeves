@@ -1,5 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
 
+::-webkit-scrollbar {
+  width: 19px;
+
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: white;
+  border-radius: 20px;
+  border: 5px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-corner {
+  background-color: transparent;
+}
+
 body {
   background-color: rgb(20, 24, 18);
   color: white;
@@ -23,6 +44,7 @@ code {
 }
 
 header {
+  position: fixed;
   padding: 10px;
   display: flex;
   align-items: center;
@@ -30,10 +52,6 @@ header {
   width: 100%;
   z-index: 3;
   transition: all 0.3s ease;
-}
-
-.fixed {
-  position: fixed;
 }
 
 .amountcontainer {
@@ -46,12 +64,18 @@ header {
 }
 
 .amountcontainer button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 2px 15px 2px 15px;
   font-weight: normal;
   font-size: 1.5rem;
   border: none;
   cursor: pointer;
   min-width: 40px;
+  min-height: 40px;
+  max-width: 40px;
+  border-radius: 20%;
 }
 
 .priceinfocontainer {
@@ -168,14 +192,18 @@ header {
 .presale-count-container h2 {
   font-weight: normal;
   font-size: 3rem;
+  padding: 5px;
 }
 
 .presale-count-container h2 {
   margin-bottom: 25px;
+  text-align: center;
 }
 
 .timer-container {
   display: flex;
+  max-width: 100%;
+  padding: 10px;
 }
 
 .timer-container div {
@@ -195,8 +223,8 @@ header {
 }
 
 .raritytitle {
-  margin-top: 25px;
-  margin-bottom: 10vh;
+  margin-top: 6em;
+  margin-bottom: 4em;
   text-align: center;
   padding: 0 25px;
 }
@@ -211,6 +239,7 @@ header {
 }
 
 .rarity-desc {
+  margin-top: 7px;
   max-width: 100%;
   font-size: 1.2rem;
 }
@@ -222,7 +251,6 @@ header {
   width: 80%;
   gap: 50px;
   flex-wrap: wrap;
-  margin-bottom: 15vh;
 }
 
 .rarity {
@@ -232,8 +260,7 @@ header {
 }
 
 .rarity img {
-  width: 100%;
-  height: 100%;
+  width: 80%;
 }
 
 .mintContainer {
@@ -282,6 +309,7 @@ header {
 }
 
 .faq-container {
+  position: relative;
   padding: 35px 0;
   background-image: linear-gradient(
       to bottom,
@@ -293,10 +321,11 @@ header {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .faq-item-container {
@@ -311,13 +340,17 @@ header {
 }
 
 .faq-item-container h2 {
+  padding-bottom: 10px;
   font-weight: normal;
   font-size: 3rem;
+  border-bottom: 1px solid #25dbe1;
+  margin-bottom: 20px;
 }
 
 .faq-item-container p {
   font-weight: normal;
   font-size: 1.7rem;
+  text-align: justify;
 }
 
 .successLink-container a {
@@ -392,6 +425,9 @@ header {
 }
 
 footer {
+  position: relative;
+  bottom: 0;
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -410,6 +446,7 @@ footer {
   font-size: 1.5rem;
   font-weight: normal;
   cursor: pointer;
+  text-align: center;
 }
 
 .footer-icon {
@@ -417,14 +454,34 @@ footer {
 }
 .howtojoin-container {
   margin-top: 35px;
+  text-align: center;
+  padding: 10px;
 }
 
 .rarity-text {
+  margin-top: 15px;
   min-height: 150px;
+  width: 100%;
 }
 
 @media (max-width: 750px) {
   .raritywrapper {
     flex-direction: column;
+  }
+
+  .timer-container h3 {
+    font-size: 40px;
+  }
+  .timer-container p {
+    font-size: 18px;
+  }
+
+  footer {
+    position: relative;
+    bottom: 25px;
+  }
+
+  .faq-item-container {
+    padding: 25px;
   }
 }

@@ -23,7 +23,7 @@ const Footer = () => {
     <footer>
       <div className="footer-icons-container">
         {socials.map((item) => (
-          <div>
+          <div key={item.link}>
             <a target="_blank" href={item.link}>
               <img className="footer-icon" src={item.icon} alt={item.name} />
             </a>

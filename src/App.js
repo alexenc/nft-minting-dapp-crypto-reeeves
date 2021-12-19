@@ -187,7 +187,7 @@ function App() {
     <Container>
       <Header getUserWallet={getUserWallet} wallet={wallet} />
       <Mainsection />
-      <PresaleCountdown />
+
       <Rarity />
       <Mintsection
         MintNFT={MintNFT}
@@ -198,7 +198,6 @@ function App() {
         currentSupply={currentSupply}
       />
       <Faq />
-      <Footer />
     </Container>
   );
 }
