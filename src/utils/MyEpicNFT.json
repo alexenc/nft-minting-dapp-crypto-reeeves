@@ -361,14 +361,8 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "bool",
-						"name": "_state",
-						"type": "bool"
-					}
-				],
-				"name": "pause",
+				"inputs": [],
+				"name": "pauseFlip",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -834,7 +828,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"baseNft.sol": "NFTBASE"
+			"Cryptoreeves.sol": "Cryptoreeves"
 		},
 		"evmVersion": "london",
 		"libraries": {},
@@ -944,12 +938,12 @@
 				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
 			]
 		},
-		"baseNft.sol": {
-			"keccak256": "0xf9f50550decbb7446b8179f49004b7783642ee58ae13489c7f7fb17515e5c7ab",
+		"Cryptoreeves.sol": {
+			"keccak256": "0x0708584ab5557503369ed1ebe45b5db31ef3328f2a63b22b15291f4a32f9a990",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7468e04b09470a4e877335fbe8a45ead97d54838de10a71331897f123ac48888",
-				"dweb:/ipfs/QmSd8AjRwUM2e6L6sLpHL1jdpU8Au2EyDaazLRf8XUJSH5"
+				"bzz-raw://793c61e66d6c769ce29365a1416d679560bad8ff9c0b731456882d3094129388",
+				"dweb:/ipfs/Qmdu4MKE3ijrK9zpiC4WRrWLA8TJdnHbex77D5zzRZQ4UN"
 			]
 		}
 	},

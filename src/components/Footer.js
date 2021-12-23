@@ -5,7 +5,7 @@ const Footer = () => {
     {
       icon: "https://logodownload.org/wp-content/uploads/2017/11/discord-logo-1-1.png",
       name: "discord",
-      link: "https://discord.gg/gFeG9DYpYS",
+      link: "https://discord.com/invite/4KTEEXBZd8",
     },
     {
       icon: "https://user-images.githubusercontent.com/35243/140804979-0ef11e0d-d527-43c1-93cb-0f48d1aec542.png",
@@ -13,7 +13,7 @@ const Footer = () => {
       link: "",
     },
     {
-      icon: "https://cdn.icon-icons.com/icons2/1109/PNG/512/1486053611-twitter_79195.png",
+      icon: "https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-6.png",
       name: "twitter",
       link: "https://twitter.com/CryptoReevesNFT",
     },

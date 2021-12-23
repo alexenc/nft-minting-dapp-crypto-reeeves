@@ -22,7 +22,7 @@ const Faq = () => {
           The presale will start the day 22th of december of 2021, and the whole
           collection will be released the 25th. To be added to the whitelist
           join our discord{" "}
-          <a target="_blank" href="https://discord.gg/gFeG9DYpYS">
+          <a target="_blank" href="https://discord.com/invite/4KTEEXBZd8">
             Here
           </a>{" "}
           and go to the #whitelist channel.

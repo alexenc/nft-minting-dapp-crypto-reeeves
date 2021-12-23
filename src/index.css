@@ -138,6 +138,7 @@ header {
   align-items: center;
   flex-wrap: wrap;
   padding: 5px;
+  max-width: 95%;
   border-radius: 10px;
 }
 
