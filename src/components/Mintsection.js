@@ -29,7 +29,7 @@ const Mintsection = ({
   minted,
 }) => {
   const [count, setCount] = useState(1);
-  const [price, setPrice] = useState(25);
+  const [price, setPrice] = useState(35);
 
   const [error, setError] = useState(false);
   const increment = () => {
@@ -52,18 +52,6 @@ const Mintsection = ({
     <div className="mintContainer" id="mint">
       <div className="supplyContainer">
         <h2>{currentSupply}/1302 NFT minted</h2>
-        <p style={{ color: "#25dbe1", fontSize: "1.5rem" }}>
-          We are on presale phase
-        </p>
-        <a
-          className="link"
-          href="https://discord.com/invite/4KTEEXBZd8"
-          target="_blank"
-          style={{ fontSize: "1.5rem" }}
-        >
-          {" "}
-          click here to join the discord and join the whitelist
-        </a>
       </div>
       <Container>
         <div className="nftcontainer">
@@ -72,7 +60,7 @@ const Mintsection = ({
         <Mintcontainer>
           <div className="infocontainer">
             <div className="priceinfocontainer">
-              <h2 className="mint-title">1 NFT = 25 Matic</h2>
+              <h2 className="mint-title">1 NFT = 35 Matic</h2>
             </div>
 
             <div className="numbercontainer">
@@ -94,7 +82,7 @@ const Mintsection = ({
               <button className="btn-hover color-1">minting...</button>
             ) : (
               <button
-                onClick={() => WhitelistMintNFT(count)}
+                onClick={() => MintNFT(count)}
                 /* onClick={() => setError(true)}*/
                 className="btn-hover color-1"
               >
