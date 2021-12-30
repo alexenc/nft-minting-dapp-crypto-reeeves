@@ -128,6 +128,19 @@
 			{
 				"inputs": [
 					{
+						"internalType": "address[]",
+						"name": "wallets",
+						"type": "address[]"
+					}
+				],
+				"name": "addToWhitelist",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "address",
 						"name": "_add",
 						"type": "address"
@@ -939,11 +952,11 @@
 			]
 		},
 		"Cryptoreeves.sol": {
-			"keccak256": "0x0708584ab5557503369ed1ebe45b5db31ef3328f2a63b22b15291f4a32f9a990",
+			"keccak256": "0x5335ff5b9a4c01627a41b68fc97650b559e61591d57c156681622983e9b33c95",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://793c61e66d6c769ce29365a1416d679560bad8ff9c0b731456882d3094129388",
-				"dweb:/ipfs/Qmdu4MKE3ijrK9zpiC4WRrWLA8TJdnHbex77D5zzRZQ4UN"
+				"bzz-raw://486d549a5316d805a4cd540611f46d4f3e3cbde7a3c41193fb9e55fb22b96f87",
+				"dweb:/ipfs/Qmcp1kfxv1ACt78NbbZxKh7ta1QzD3JEJvchv2tkWALtLq"
 			]
 		}
 	},

@@ -8,7 +8,6 @@ import Mintsection from "./components/Mintsection";
 import Rarity from "./components/Rarity";
 import ReactGA from "react-ga";
 import Swal from "sweetalert2";
-
 import Faq from "./components/Faq";
 
 ReactGA.initialize("UA-215732718-1");
@@ -24,18 +23,18 @@ function App() {
   const [minting, setIsMinting] = useState(false);
   const [txn, setTxn] = useState(null);
   const [currentSupply, setCurrentSupply] = useState(0);
-
+  const [tokensMinted, setTokensMinted] = useState([]);
   const [CONFIG, SET_CONFIG] = useState({
-    CONTRACT_ADDRESS: "0xFB6952B4002820B12e722F71D202c35f82a81406",
+    CONTRACT_ADDRESS: "0xbddB4ddF73833676e4C5A5bf534131ea962D67E6",
     SCAN_LINK: "https://polygonscan.com/tx/",
 
     NETWORK: {
-      NAME: "POLYGON",
-      SYMBOL: "Matic",
-      ID: "0x89",
+      NAME: "Rinkeby",
+      SYMBOL: "ether",
+      ID: "0x04",
     },
     MAX_SUPPLY: 1302,
-    price: 35,
+    price: 0,
     whitelistPrice: 25,
     DISPLAY_COST: 0,
     GAS_LIMIT: 0,
@@ -92,7 +91,7 @@ function App() {
             method: "wallet_addEthereumChain",
             params: [
               {
-                chainId: "0x89", // Hexadecimal version of 80001, prefixed with 0x
+                chainId: "0x04", // Hexadecimal version of 80001, prefixed with 0x
                 chainName: "POLYGON",
                 nativeCurrency: {
                   name: "MATIC",
@@ -126,13 +125,6 @@ function App() {
       console.log("connected to chain" + chainId);
       setChain(chainId);
       console.log(CONFIG.NETWORK.ID);
-      if (chainId !== CONFIG.NETWORK.ID) {
-        setTimeout(() => {
-          addPolygonNetwork();
-        }, 2000);
-
-        return;
-      }
 
       if (ethereum) {
         const provider = new ethers.providers.Web3Provider(ethereum);
@@ -144,7 +136,7 @@ function App() {
         );
 
         setIsMinting(true);
-        let nftTxn = await connectedContract.mint(num, {
+        const nftTxn = await connectedContract.mint(num, {
           value: ethers.utils.parseEther(price.toString()),
         });
         console.log("Mining...please wait.");
@@ -153,6 +145,10 @@ function App() {
         setMinted(true);
 
         setTxn(`${CONFIG.SCAN_LINK}${nftTxn.hash}`);
+        //TODO: mapear los logs y sacar los tokenId de esa transaccióón para mostrarlos por pantalla
+        const receipt = await provider.getTransactionReceipt(nftTxn.hash);
+        console.log(receipt);
+        decodeTxnLogs(receipt);
       } else {
       }
     } catch (error) {
@@ -165,6 +161,18 @@ function App() {
       setIspending(false);
       setIsMinting(false);
     }
+  };
+
+  const decodeTxnLogs = (txnlogs) => {
+    const events = txnlogs.logs;
+    let tokenIds = [];
+
+    events.forEach((event) => {
+      tokenIds.push(parseInt(event.topics[3], 16));
+    });
+
+    console.log("tokenIds", tokenIds);
+    setTokensMinted(tokenIds);
   };
 
   const WhitelistMintNFT = async (num) => {
@@ -207,6 +215,9 @@ function App() {
         setMinted(true);
 
         setTxn(`${CONFIG.SCAN_LINK}${nftTxn.hash}`);
+        const receipt = await provider.getTransactionReceipt(nftTxn.hash);
+        console.log(receipt);
+        decodeTxnLogs(receipt);
       } else {
       }
     } catch (error) {

@@ -10,7 +10,7 @@ const Footer = () => {
     {
       icon: "https://user-images.githubusercontent.com/35243/140804979-0ef11e0d-d527-43c1-93cb-0f48d1aec542.png",
       name: "opensea",
-      link: "",
+      link: "https://opensea.io/collection/crypto-reeves",
     },
     {
       icon: "https://logodownload.org/wp-content/uploads/2014/09/twitter-logo-6.png",
